@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vazento | Global Luxury Marketplace</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f6f1e8;
+color:#1a1a1a;
+line-height:1.6;
+scroll-behavior:smooth;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#f6f1e8;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+border-bottom:1px solid #e4d8c3;
+z-index:1000;
+}
+
+nav a{
+text-decoration:none;
+color:#b89b5e;
+font-weight:500;
+}
+
+section{padding:120px 12%;}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-style:italic;
+font-size:3rem;
+color:#b89b5e;
+margin-bottom:20px;
+}
+
+.section-title{
+text-align:center;
+font-size:2rem;
+color:#b89b5e;
+margin-bottom:60px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:50px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+text-align:center;
+}
+
+button{
+background:#b89b5e;
+color:white;
+border:none;
+padding:12px 30px;
+border-radius:4px;
+cursor:pointer;
+}
+
+form input, form select{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #e4d8c3;
+border-radius:4px;
+}
+
+.search-box{text-align:center;margin-bottom:30px;}
+.search-box input{width:300px;}
+
+.country-list{
+columns:3;
+column-gap:40px;
+font-size:0.9rem;
+line-height:1.8;
+}
+
+.country-item{display:block;}
+
+footer{
+background:#1a1a1a;
+color:white;
+padding:60px 12%;
+text-align:center;
+font-size:0.85rem;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#shop">Shop</a>
+<a href="#sell">Sell</a>
+<a href="#countries">Countries</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+<h1>WELCOME TO VAZENTO. HAPPY SHOPPING!</h1>
+<p>A global luxury marketplace where sellers receive payments directly from customers.</p>
+</section>
+
+<section id="shop">
+<h2 class="section-title">Featured Products</h2>
+<div class="products">
+<div class="card">
+<h3>Luxury Fashion Item</h3>
+<p>Sold by Independent Seller</p>
+<form action="https://www.paypal.com/ncp/payment/UTL3LGD4SND44" method="post" target="_blank">
+<button type="submit">Buy Now</button>
+</form>
+</div>
+</div>
+</section>
+
+<section id="sell">
+<h2 class="section-title">Open Your Shop</h2>
+<div class="card">
+
+<form action="mailto:vazentoplatform@gmail.com" method="POST" enctype="text/plain">
+
+<input type="text" name="Full Name" placeholder="Full Name" required>
+<input type="email" name="Email" placeholder="Email Address" required>
+<input type="text" name="Shop Name" placeholder="Shop Name" required>
+
+<select name="Category" required>
+<option value="">Select Shop Category</option>
+<option>Fashion</option>
+<option>Beauty & Cosmetics</option>
+<option>Hair & Wigs</option>
+<option>Skincare</option>
+<option>Perfume</option>
+<option>Accessories</option>
+<option>Home & Lifestyle</option>
+<option>Digital Products</option>
+<option>Other</option>
+</select>
+
+<label>
+<input type="checkbox" required>
+ I agree that I will receive payments directly through my own PayPal account.
+</label>
+
+<br><br>
+
+<button type="submit" onclick="window.open('https://www.paypal.com/ncp/payment/UTL3LGD4SND44','_blank')">
+Submit & Pay
+</button>
+
+</form>
+
+</div>
+</section>
+
+<section id="countries">
+<h2 class="section-title">Available Worldwide</h2>
+<div class="search-box">
+<input type="text" id="countrySearch" placeholder="Search country..." onkeyup="searchCountries()">
+</div>
+<div class="country-list" id="countryList">
+<span class="country-item">Australia</span>
+<span class="country-item">Canada</span>
+<span class="country-item">France</span>
+<span class="country-item">Germany</span>
+<span class="country-item">Ghana</span>
+<span class="country-item">India</span>
+<span class="country-item">Liberia</span>
+<span class="country-item">Nigeria</span>
+<span class="country-item">Sierra Leone</span>
+<span class="country-item">South Africa</span>
+<span class="country-item">United Kingdom</span>
+<span class="country-item">United States</span>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<div class="card">
+<p>Email: vazentoplatform@gmail.com</p>
+</div>
+</section>
+
+<footer>
+© 2026 Vazento. All Rights Reserved.
+</footer>
+
+<script>
+function searchCountries(){
+let input=document.getElementById("countrySearch").value.toLowerCase();
+let countries=document.getElementsByClassName("country-item");
+for(let i=0;i<countries.length;i++){
+let txt=countries[i].textContent.toLowerCase();
+countries[i].style.display=txt.includes(input)?"block":"none";
+}
+}
+</script>
+
+</body>
+</html>
