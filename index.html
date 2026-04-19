@@ -1,479 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vazento | Global Luxury Marketplace</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Vazento</title>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f8f5f0;
+      }
 
-body{
-font-family:'Poppins',sans-serif;
-background:#f6f1e8;
-color:#1a1a1a;
-line-height:1.6;
-scroll-behavior:smooth;
-}
+      /* NAV */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10%;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
 
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:#f6f1e8;
-display:flex;
-justify-content:center;
-gap:40px;
-padding:20px;
-border-bottom:1px solid #e4d8c3;
-z-index:1000;
-}
+      nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+      }
 
-nav a{
-text-decoration:none;
-color:#b89b5e;
-font-weight:500;
-}
+      /* HERO */
+      .hero {
+        text-align: center;
+        padding: 80px 20px;
+        background: #fff;
+      }
 
-section{padding:120px 12%;}
+      .hero h1 {
+        font-size: 40px;
+      }
 
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
+      /* MAIN LAYOUT */
+      .container {
+        display: flex;
+        gap: 40px;
+        padding: 40px 10%;
+      }
 
-.hero h1{
-font-family:'Playfair Display',serif;
-font-style:italic;
-font-size:3rem;
-color:#b89b5e;
-margin-bottom:20px;
-}
+      /* SHOP AREA */
+      .shop {
+        flex: 2;
+      }
 
-.section-title{
-text-align:center;
-font-size:2rem;
-color:#b89b5e;
-margin-bottom:60px;
-}
+      .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+      }
 
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:50px;
-}
+      .product {
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+      }
 
-.card{
-background:white;
-padding:40px;
-border-radius:8px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-text-align:center;
-}
+      .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
 
-button{
-background:#b89b5e;
-color:white;
-border:none;
-padding:12px 30px;
-border-radius:4px;
-cursor:pointer;
-}
+      /* SELLER AREA */
+      .seller {
+        flex: 1;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+      }
 
-form input, form select{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-border:1px solid #e4d8c3;
-border-radius:4px;
-}
+      /* FORM */
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
 
-.search-box{text-align:center;margin-bottom:30px;}
-.search-box input{width:300px;}
+      button {
+        padding: 10px;
+        background: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+    </style>
+  </head>
 
-.country-list{
-columns:3;
-column-gap:40px;
-font-size:0.9rem;
-line-height:1.8;
-}
+  <body>
+    <nav>
+      <div><strong>VAZENTO</strong></div>
+      <div>
+        <a href="#">Shop</a>
+        <a href="#">Rent a Shop</a>
+        <a href="#">About</a>
+    </nav>
 
-.country-item{display:block;}
+    <!-- HERO -->
+    <section class="hero">
+      <h1>WELCOME TO VAZENTO. HAPPY SHOPPING!</h1>
+      <p>Shop globally or start your own store</p>
+    </section>
+    <!-- ABOUT US -->
+<section id="about" style="padding:100px 12%; background:#ffffff; text-align:center;">
 
-footer{
-background:#1a1a1a;
-color:white;
-padding:60px 12%;
-text-align:center;
-font-size:0.85rem;
-}
-</style>
-</head>
+  <h2 class="section-title">About Vazento</h2>
+  
+  <p style="max-width:700px; margin:auto; line-height:1.8; font-size:16px;">
+  
+  Vazento is a global digital marketplace created to connect independent sellers with customers worldwide. 
+  Our platform allows sellers to showcase their products while receiving payments directly from their customers, ensuring simplicity and independence.
+  
+  We are committed to creating a space where businesses of all sizes can grow, while customers can discover unique products from different parts of the world.
+  
+  Vazento does not handle or control payments between sellers and customers. All transactions are conducted directly between both parties.
+  
+  For international orders, shipping arrangements are handled through Vazento and must be paid for accordingly.
+  
+  </p>
+  
+  </section>
 
-<body>
+    <!-- MAIN -->
+    <div class="container">
+      <!-- SHOP SECTION -->
+      <div class="shop">
+        <h2>Shop Here</h2>
 
-<nav>
-<a href="#shop">Shop</a>
-<a href="#sell">Sell</a>
-<a href="#countries">Countries</a>
-<a href="#contact">Contact</a>
-</nav>
+        <div class="products" id="products">
+          <!-- SAMPLE PRODUCT -->
+          <div class="product">
+            <img src="https://via.placeholder.com/200" />
+            <h3>Brand: Zara Style Dress</h3>
+            <p>$25</p>
 
-<section class="hero">
-<h1>WELCOME TO VAZENTO. HAPPY SHOPPING!</h1>
-<p>A global luxury marketplace where sellers receive payments directly from customers.</p>
-</section>
+            <form
+              action="https://www.paypal.com/ncp/payment/UTL3LGD4SND44"
+              method="post"
+              target="_blank"
+            >
+              <button>Buy Now</button>
+            </form>
+          </div>
+        </div>
 
-<section id="shop">
-<h2 class="section-title">Featured Products</h2>
-<div class="products">
-<div class="card">
-<h3>Luxury Fashion Item</h3>
-<p>Sold by Independent Seller</p>
-<form action="https://www.paypal.com/ncp/payment/29NB6FBUB4NSY" method="post" target="_blank">
-<button type="submit">Buy Now</button>
-</form>
-</div>
-</div>
-</section>
+        <!-- SHIPPING -->
+        <h3>Shipping Details</h3>
 
-<section id="sell">
-<h2 class="section-title">Open Your Shop</h2>
-<div class="card">
+        <input type="text" placeholder="Full Name" />
+        <input type="text" placeholder="Address" />
+        <input type="text" placeholder="Country" />
+      </div>
 
-<form action="mailto:vazentoplatform@gmail.com" method="POST" enctype="text/plain">
+      <!-- SELLER SECTION -->
+      <div class="seller">
+        <h2>Rent a Shop</h2>
 
-<input type="text" name="Full Name" placeholder="Full Name" required>
-<input type="email" name="Email" placeholder="Email Address" required>
-<input type="text" name="Shop Name" placeholder="Shop Name" required>
+        <input type="text" id="sellerName" placeholder="Your Name" />
+        <input type="email" id="sellerEmail" placeholder="Email" />
 
-<select name="Category" required>
-<option value="">Select Shop Category</option>
-<option>Fashion</option>
-<option>Beauty & Cosmetics</option>
-<option>Hair & Wigs</option>
-<option>Skincare</option>
-<option>Perfume</option>
-<option>Accessories</option>
-<option>Home & Lifestyle</option>
-<option>Digital Products</option>
-<option>Other</option>
-</select>
+        <select id="category">
+          <option>Fashion</option>
+          <option>Beauty</option>
+          <option>Electronics</option>
+          <option>Accessories</option>
+        </select>
 
-<label>
-<input type="checkbox" required>
- I agree that I will receive payments directly through my own PayPal account.
-</label>
+        <input type="text" placeholder="Country" />
 
-<br><br>
+        <h3>Add Product</h3>
 
-<button type="submit" onclick="window.open('https://www.paypal.com/ncp/payment/29NB6FBUB4NSY','_blank')">
-Submit & Pay
-</button>
+        <input type="text" id="pname" placeholder="Product Name" />
+        <input type="number" id="pprice" placeholder="Price" />
+        <input type="file" id="pimage" />
 
-</form>
+        <button onclick="addProduct()">Upload Product</button>
+      </div>
+    </div>
 
-</div>
-</section>
+    <script>
+      function addProduct() {
+        let name = document.getElementById("pname").value;
+        let price = document.getElementById("pprice").value;
+        let image = document.getElementById("pimage").files[0];
 
-<section id="countries">
-<h2 class="section-title">Available Worldwide</h2>
-<div class="search-box">
-<input type="text" id="countrySearch" placeholder="Search country..." onkeyup="searchCountries()">
-</div>
-<div class="country-list" id="countryList">
-<span class="country-item">Afghanistan</span>
-<span class="country-item">Albania</span>
-<span class="country-item">Algeria</span>
-<span class="country-item">Andorra</span>
-<span class="country-item">Angola</span>
-<span class="country-item">Antigua and Barbuda</span>
-<span class="country-item">Argentina</span>
-<span class="country-item">Armenia</span>
-<span class="country-item">Australia</span>
-<span class="country-item">Austria</span>
-<span class="country-item">Azerbaijan</span>
-<span class="country-item">Bahamas</span>
-<span class="country-item">Bahrain</span>
-<span class="country-item">Bangladesh</span>
-<span class="country-item">Barbados</span>
-<span class="country-item">Belarus</span>
-<span class="country-item">Belgium</span>
-<span class="country-item">Belize</span>
-<span class="country-item">Benin</span>
-<span class="country-item">Bhutan</span>
-<span class="country-item">Bolivia</span>
-<span class="country-item">Bosnia and Herzegovina</span>
-<span class="country-item">Botswana</span>
-<span class="country-item">Brazil</span>
-<span class="country-item">Brunei</span>
-<span class="country-item">Bulgaria</span>
-<span class="country-item">Burkina Faso</span>
-<span class="country-item">Burundi</span>
-<span class="country-item">Cabo Verde</span>
-<span class="country-item">Cambodia</span>
-<span class="country-item">Cameroon</span>
-<span class="country-item">Canada</span>
-<span class="country-item">Central African Republic</span>
-<span class="country-item">Chad</span>
-<span class="country-item">Chile</span>
-<span class="country-item">China</span>
-<span class="country-item">Colombia</span>
-<span class="country-item">Comoros</span>
-<span class="country-item">Congo (Congo-Brazzaville)</span>
-<span class="country-item">Costa Rica</span>
-<span class="country-item">Croatia</span>
-<span class="country-item">Cuba</span>
-<span class="country-item">Cyprus</span>
-<span class="country-item">Czechia (Czech Republic)</span>
-<span class="country-item">Democratic Republic of the Congo</span>
-<span class="country-item">Denmark</span>
-<span class="country-item">Djibouti</span>
-<span class="country-item">Dominica</span>
-<span class="country-item">Dominican Republic</span>
-<span class="country-item">Ecuador</span>
-<span class="country-item">Egypt</span>
-<span class="country-item">El Salvador</span>
-<span class="country-item">Equatorial Guinea</span>
-<span class="country-item">Eritrea</span>
-<span class="country-item">Estonia</span>
-<span class="country-item">Eswatini</span>
-<span class="country-item">Ethiopia</span>
-<span class="country-item">Fiji</span>
-<span class="country-item">Finland</span>
-<span class="country-item">France</span>
-<span class="country-item">Gabon</span>
-<span class="country-item">Gambia</span>
-<span class="country-item">Georgia</span>
-<span class="country-item">Germany</span>
-<span class="country-item">Ghana</span>
-<span class="country-item">Greece</span>
-<span class="country-item">Grenada</span>
-<span class="country-item">Guatemala</span>
-<span class="country-item">Guinea</span>
-<span class="country-item">Guinea-Bissau</span>
-<span class="country-item">Guyana</span>
-<span class="country-item">Haiti</span>
-<span class="country-item">Honduras</span>
-<span class="country-item">Hungary</span>
-<span class="country-item">Iceland</span>
-<span class="country-item">India</span>
-<span class="country-item">Indonesia</span>
-<span class="country-item">Iran</span>
-<span class="country-item">Iraq</span>
-<span class="country-item">Ireland</span>
-<span class="country-item">Israel</span>
-<span class="country-item">Italy</span>
-<span class="country-item">Jamaica</span>
-<span class="country-item">Japan</span>
-<span class="country-item">Jordan</span>
-<span class="country-item">Kazakhstan</span>
-<span class="country-item">Kenya</span>
-<span class="country-item">Kiribati</span>
-<span class="country-item">Kuwait</span>
-<span class="country-item">Kyrgyzstan</span>
-<span class="country-item">Laos</span>
-<span class="country-item">Latvia</span>
-<span class="country-item">Lebanon</span>
-<span class="country-item">Lesotho</span>
-<span class="country-item">Liberia</span>
-<span class="country-item">Libya</span>
-<span class="country-item">Liechtenstein</span>
-<span class="country-item">Lithuania</span>
-<span class="country-item">Luxembourg</span>
-<span class="country-item">Madagascar</span>
-<span class="country-item">Malawi</span>
-<span class="country-item">Malaysia</span>
-<span class="country-item">Maldives</span>
-<span class="country-item">Mali</span>
-<span class="country-item">Malta</span>
-<span class="country-item">Marshall Islands</span>
-<span class="country-item">Mauritania</span>
-<span class="country-item">Mauritius</span>
-<span class="country-item">Mexico</span>
-<span class="country-item">Micronesia</span>
-<span class="country-item">Moldova</span>
-<span class="country-item">Monaco</span>
-<span class="country-item">Mongolia</span>
-<span class="country-item">Montenegro</span>
-<span class="country-item">Morocco</span>
-<span class="country-item">Mozambique</span>
-<span class="country-item">Myanmar (Burma)</span>
-<span class="country-item">Namibia</span>
-<span class="country-item">Nauru</span>
-<span class="country-item">Nepal</span>
-<span class="country-item">Netherlands</span>
-<span class="country-item">New Zealand</span>
-<span class="country-item">Nicaragua</span>
-<span class="country-item">Niger</span>
-<span class="country-item">Nigeria</span>
-<span class="country-item">North Korea</span>
-<span class="country-item">North Macedonia</span>
-<span class="country-item">Norway</span>
-<span class="country-item">Oman</span>
-<span class="country-item">Pakistan</span>
-<span class="country-item">Palau</span>
-<span class="country-item">Palestine</span>
-<span class="country-item">Panama</span>
-<span class="country-item">Papua New Guinea</span>
-<span class="country-item">Paraguay</span>
-<span class="country-item">Peru</span>
-<span class="country-item">Philippines</span>
-<span class="country-item">Poland</span>
-<span class="country-item">Portugal</span>
-<span class="country-item">Qatar</span>
-<span class="country-item">Romania</span>
-<span class="country-item">Russia</span>
-<span class="country-item">Rwanda</span>
-<span class="country-item">Saint Kitts and Nevis</span>
-<span class="country-item">Saint Lucia</span>
-<span class="country-item">Saint Vincent and the Grenadines</span>
-<span class="country-item">Samoa</span>
-<span class="country-item">San Marino</span>
-<span class="country-item">Sao Tome and Principe</span>
-<span class="country-item">Saudi Arabia</span>
-<span class="country-item">Senegal</span>
-<span class="country-item">Serbia</span>
-<span class="country-item">Seychelles</span>
-<span class="country-item">Sierra Leone</span>
-<span class="country-item">Singapore</span>
-<span class="country-item">Slovakia</span>
-<span class="country-item">Slovenia</span>
-<span class="country-item">Solomon Islands</span>
-<span class="country-item">Somalia</span>
-<span class="country-item">South Africa</span>
-<span class="country-item">South Korea</span>
-<span class="country-item">South Sudan</span>
-<span class="country-item">Spain</span>
-<span class="country-item">Sri Lanka</span>
-<span class="country-item">Sudan</span>
-<span class="country-item">Suriname</span>
-<span class="country-item">Sweden</span>
-<span class="country-item">Switzerland</span>
-<span class="country-item">Syria</span>
-<span class="country-item">Taiwan</span>
-<span class="country-item">Tajikistan</span>
-<span class="country-item">Tanzania</span>
-<span class="country-item">Thailand</span>
-<span class="country-item">Timor-Leste</span>
-<span class="country-item">Togo</span>
-<span class="country-item">Tonga</span>
-<span class="country-item">Trinidad and Tobago</span>
-<span class="country-item">Tunisia</span>
-<span class="country-item">Turkey</span>
-<span class="country-item">Turkmenistan</span>
-<span class="country-item">Tuvalu</span>
-<span class="country-item">Uganda</span>
-<span class="country-item">Ukraine</span>
-<span class="country-item">United Arab Emirates</span>
-<span class="country-item">United Kingdom</span>
-<span class="country-item">United States of America</span>
-<span class="country-item">Uruguay</span>
-<span class="country-item">Uzbekistan</span>
-<span class="country-item">Vanuatu</span>
-<span class="country-item">Vatican City</span>
-<span class="country-item">Venezuela</span>
-<span class="country-item">Vietnam</span>
-<span class="country-item">Yemen</span>
-<span class="country-item">Zambia</span>
-<span class="country-item">Zimbabwe</span>
-</div>
-</section>
+        let reader = new FileReader();
 
-<section id="contact">
-<h2 class="section-title">Contact</h2>
-<div class="card">
-<p>Email: vazentoplatform@gmail.com</p>
-</div>
-</section>
-<!-- SELLER PRODUCT UPLOAD -->
-<section id="product-upload" style="padding:40px;background:#f8f5f0;">
-
-<h2>Seller Product Upload</h2>
-
-<form id="uploadForm">
-
-<label>Product Name</label><br>
-<input type="text" id="productName" required><br><br>
-
-<label>Price (USD)</label><br>
-<input type="number" id="productPrice" required><br><br>
-
-<label>Upload Product Image</label><br>
-<input type="file" id="productImage" accept="image/*" required><br><br>
-
-<button type="submit">Upload Product</button>
-
-</form>
-
-</section>
- <!-- MARKETPLACE PRODUCTS -->
-<section id="product-list" style="padding:40px;">
-
-<h2>Marketplace Products</h2>
-
-<div id="products"></div>
-
-</section>
- <script>
-
-const form = document.getElementById("uploadForm");
-const productContainer = document.getElementById("products");
-
-form.addEventListener("submit", function(e){
-
-e.preventDefault();
-
-const name = document.getElementById("productName").value;
-const price = document.getElementById("productPrice").value;
-const imageFile = document.getElementById("productImage").files[0];
-
-const reader = new FileReader();
-
-reader.onload = function(event){
-
-const productHTML = `
-<div style="border:1px solid #ccc;padding:15px;margin:10px;width:250px;display:inline-block;">
-<img src="${event.target.result}" style="width:100%;">
+        reader.onload = function (e) {
+          let productHTML = `
+<div class="product">
+<img src="${e.target.result}">
 <h3>${name}</h3>
 <p>$${price}</p>
 
-<a href="https://www.paypal.com/paypalme/YOURPAYPAL/${price}" target="_blank">
+<form action="https://www.paypal.com/ncp/payment/UTL3LGD4SND44" method="post" target="_blank">
 <button>Buy Now</button>
-</a>
+</form>
 
 </div>
 `;
 
-productContainer.innerHTML += productHTML;
+          document.getElementById("products").innerHTML += productHTML;
+        };
 
-};
-
-reader.readAsDataURL(imageFile);
-
-});
-
-</script>
-<footer>
-© 2026 Vazento. All Rights Reserved.
-</footer>
-
-<script>
-function searchCountries(){
-let input=document.getElementById("countrySearch").value.toLowerCase();
-let countries=document.getElementsByClassName("country-item");
-for(let i=0;i<countries.length;i++){
-let txt=countries[i].textContent.toLowerCase();
-countries[i].style.display=txt.includes(input)?"block":"none";
-}
-}
-</script>
-
-</body>
+        reader.readAsDataURL(image);
+      }
+    </script>
+  </body>
 </html>
